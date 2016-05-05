@@ -1,0 +1,23 @@
+Package: SVDApproximation
+Type: Package
+Title: Build, tune and make recommendations using SVD Approximation algorithm
+Version: 0.1
+Date: 2016-05-05
+Author: Taras Hnot [aut, cre]
+Maintainer: Taras Hnot <tarashnot@gmail.com>
+Depends:
+    R (>= 3.2.3)
+Description: Package contains implementation of algorithm to predict ratings
+    based on SVD Approximation approcah (singular value decomposition and
+    reconstruction of matrix with fewer components)
+License: GPL-3
+LazyData: TRUE
+Imports:
+    Matrix,
+    recommenderlab,
+    data.table,
+    RColorBrewer,
+    ggplot2,
+    gridExtra,
+    reshape2
+RoxygenNote: 5.0.1
