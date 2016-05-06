@@ -2,7 +2,7 @@ Package: SVDApproximation
 Type: Package
 Title: Build, tune and make recommendations using SVD Approximation algorithm
 Version: 0.1
-Date: 2016-05-05
+Date: 2016-05-06
 Author: Taras Hnot [aut, cre]
 Maintainer: Taras Hnot <tarashnot@gmail.com>
 Depends:
