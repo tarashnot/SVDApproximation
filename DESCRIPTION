@@ -1,12 +1,10 @@
 Package: SVDApproximation
 Type: Package
 Title: Build, tune and make recommendations using SVD Approximation algorithm
-Version: 0.1
+Version: 0.2
 Date: 2016-05-06
 Author: Taras Hnot [aut, cre]
 Maintainer: Taras Hnot <tarashnot@gmail.com>
-Depends:
-    R (>= 3.2.3)
 Description: Package contains implementation of algorithm to predict ratings
     based on SVD Approximation approcah (singular value decomposition and
     reconstruction of matrix with fewer components)

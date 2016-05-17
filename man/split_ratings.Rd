@@ -4,12 +4,15 @@
 \alias{split_ratings}
 \title{Split ratings data into train, validation and test sets}
 \usage{
-split_ratings(ratings_table, proportion = c(0.7, 0.15, 0.15))
+split_ratings(ratings_table, train_test_splitted = FALSE,
+  proportion = c(0.7, 0.15, 0.15))
 }
 \arguments{
 \item{ratings_table}{\code{\link{data.table}} or \code{\link{data.frame}} of ratings. Should contain 3 columns: user (id of user, integer), item (id of item, integer) and rating (rating of item by user, integer or numeric)}
 
-\item{proportion}{(default c(0.7, 0.15, 0.15)) vector of 3 numeric values, which sums to 1 and indicate proportion of ratings to be set to train, validation and test sets}
+\item{train_test_splitted}{(default FALSE) is dataset is already splitted into train and test set (column train with TRUE and FALSE should be in ratings_table)}
+
+\item{proportion}{(default c(0.7, 0.15, 0.15)) vector of 3 numeric values for train_test_splitted=FALSE, which sums to 1 and indicate proportion of ratings to be set to train, validation and test sets. And of length 2 for train_test_splitted=TRUE, which indicates in what proportion should be splitted train set into train and validation}
 }
 \value{
 List of 6 objects:

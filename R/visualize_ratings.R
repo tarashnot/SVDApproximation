@@ -30,9 +30,9 @@ visualize_ratings <- function(ratings_table, color_palett = "Accent") {
   cols <- brewer.pal(3, color_palett)
 
   #Create sparse matrix
-  ratings_sparse <- sparseMatrix(i = ratings$user, j = ratings$item, x = ratings$rating,
-                                 dims = c(length(unique(ratings$user)), length(unique(ratings$item))),
-                                 dimnames = list(paste("u", 1:length(unique(ratings$user)), sep = "") , paste("m", 1:length(unique(ratings$item)), sep = "")))
+  ratings_sparse <- sparseMatrix(i = ratings_table$user, j = ratings_table$item, x = ratings_table$rating,
+                                 dims = c(length(unique(ratings_table$user)), length(unique(ratings_table$item))),
+                                 dimnames = list(paste("u", 1:length(unique(ratings_table$user)), sep = "") , paste("m", 1:length(unique(ratings_table$item)), sep = "")))
 
   #Create real rating matrix object for recommenderlab
   matrix_sparse <- new("realRatingMatrix", data = ratings_sparse)
@@ -42,9 +42,10 @@ visualize_ratings <- function(ratings_table, color_palett = "Accent") {
   names(data_plot) <- c("Score", "Count")
 
   all_ratings <- ggplot(data_plot,aes(x = Score, y = Count)) +
-    geom_bar(stat="identity",colour="white", fill = cols[1]) +
-    labs(title = "Count of different ratings") +
-    theme(axis.text =element_text(size=12), axis.title=element_text(size=13), title=element_text(size=12))
+      geom_bar(stat="identity",colour="white", fill = cols[1]) +
+      labs(title = "Count of different ratings") +
+      theme(axis.text =element_text(size=12), axis.title=element_text(size=13), title=element_text(size=12))
+
 
   data_plot <- data.frame(rowMeans(matrix_sparse))
   names(data_plot) <- "UserAverageScore"
